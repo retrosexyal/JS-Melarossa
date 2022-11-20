@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1
+      const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
+      // 2
+      function findOdd(A) {
+        var obj = {};
+        A.forEach(function (el) {
+          obj[el] ? obj[el]++ : (obj[el] = 1);
+        });
+
+        for (prop in obj) {
+          if (obj[prop] % 2 !== 0) return Number(prop);
+        }
+      }
+      //   3
+
+      function findOdd(A) {
+        const arr = A.sort();
+        console.log(arr);
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i + 1] && arr[i] === arr[i + 1]) {
+            count++;
+          }
+          if (arr[i + 1] && arr[i] !== arr[i + 1]) {
+            if (count % 2 == 0) {
+              return arr[i];
+            } else count = 0;
+          }
+          if (arr[i] === arr[arr.length - 1]) return arr[i];
+        }
+      }
+    </script>
+  </body>
+</html>
