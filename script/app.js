@@ -87,7 +87,12 @@ for (num of newArr) {
  */
 
 //4
-
-/* for (let i = 0; i < 7; i++){
-    
-} */
+/* 
+let iter = 1;
+alert('Бесконечный цикл запущен')
+do {
+  alert(`${iter} итерация`);
+  iter++;
+  if(iter >= 7) break;
+} while (1);
+alert('Бесконечный цикл не бесконечен') */
